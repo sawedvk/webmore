@@ -2,7 +2,7 @@
     width: 393px;
     height: 252px;
     border-radius: 5%;
-    color: gray;
+    border-color: gray;
 }
 .itemPabrik .Foto {
     width: fit-content;
@@ -13,7 +13,7 @@
 .itemPabrik h1 {
     width: fit-content;
     color: black;
-    font-style: oblique;
+    font-weight: bold;
     font-size: 14px;
     text-align: center;
 }
