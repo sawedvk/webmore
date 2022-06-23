@@ -1,8 +1,8 @@
 import React from 'react';
-import {Logo} from '../assets/logo.png';
-import {Person} from '../assets/Group 8.png';
-import {Notif} from '../assets/Notif.png';
-import {Link} from 'react-router-dom';
+import { Logo } from '../assets/logo.png';
+import { Person } from '../assets/Group 8.png';
+import { Notif } from '../assets/Notif.png';
+import { Link } from 'react-router-dom';
 import "../styles/NavBar.css";
 
 function NavBar() {

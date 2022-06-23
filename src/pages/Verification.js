@@ -10,14 +10,17 @@ function Verification() {
         </div>
         <div className='rightSide'>
             <h2>VERIFIKASI</h2>
-            <br/>
+            <br/><br/>
             <h4>Kode Verifikasi telah dikirimkan ke email anda.</h4>
+            <br/>
             <h4>Silahkan masukan untuk mengverifikasi email anda.</h4>
             <form>
                 <input name='code' type='number'/>
-                <br/>
+                <br/><br/>
                 <Link><p>Kirim ulang kode verisikasi</p></Link>
+                <br/>
                 <input name='verifikasi' type='submit'/>
+                <br/><br/>
                 <input name='batal' type='cancel'/>
             </form>
             <p>Sudan punya akun? <Link to='/login'> Masuk </Link></p>

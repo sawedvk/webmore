@@ -12,11 +12,15 @@ function SignUp() {
             <h2>DAFTAR</h2>
             <form>
                 <input name='name' type='text'/>
+                <br/><br/>
                 <input name='email' type='email'/>
+                <br/><br/>
                 <input name='phone' type='number'/>
+                <br/><br/>
                 <input name='password' type='password'/>
+                <br/><br/>
                 <input name='repassword' type='password'/>
-                <br/>
+                <br/><br/>
                 <input name='signup' type='submit'/>
             </form>
             <p>Sudan punya akun? <Link to='/login'> Masuk </Link></p>

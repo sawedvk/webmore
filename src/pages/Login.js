@@ -1,20 +1,26 @@
 import React from 'react'
 import {Logo} from '../assets/logo.jpeg';
 import {Link} from 'react-router-dom';
+// import "../styles.StartPages.css";
 
 function Login() {
   return (
     <div className='login'>
         <div className='leftSide'>
-            <img src={Logo}/>
+            {/* <img src={Logo}/> */}
         </div>
         <div className='rightSide'>
             <h2>MASUK</h2>
             <form>
                 <input name='email' type='email'/>
+                <br/>
+                <br/>
                 <input name='password' type='password'/>
                 <br/>
+                <br/>
                 <Link to='/forgotpassword'>Lupa Kata Sandi?</Link>
+                <br/>
+                <br/>
                 <input name='signin' type='submit'/>
             </form>
             <p>Belum punya akun? <Link to='/signup'> Daftar</Link></p>
