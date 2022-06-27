@@ -1,28 +1,33 @@
 import React from 'react';
 import NavBar from '../components/NavBar.js';
 import Footer from '../components/Footer.js';
-import ItemPabrik from '../components/ItemPabrik';
-import {PabrikList} from '../helpers/PabrikList';
+import ItemMesin from '../components/ItemMesin';
+import {MesinList} from '../helpers/MesinList';
 
-function Home() {
+function Mesin() {
   return (
-    <div className='home'>
+    <div className='mesin'>
         <NavBar/>
         <div className='content'>
             <div className='navigator'>
               <img/>
+              <button>Anggota</button>
+              <button>Ubah</button>
+              <br/>
+              <button>Hapus</button>
             </div>
-            <h1>Daftar Pabrik</h1>
+            <h1>Daftar Mesin</h1>
             <button>+Tambah</button>
             <input name='search' type='text'/>
             <div className='pabrik'>
-              {PabrikList.map((menuItem, key) => {
+              {MesinList.map((menuItem, key) => {
                 return (
-                  <ItemPabrik
+                  <ItemMesin
                   key={key}
                   image={menuItem.image}
                   name={menuItem.name}
-                  caption={menuItem.caption}/>
+                  type={menuItem.type}
+                  brand={menuItem.brand}/>
                 );
               })}
             </div>
@@ -32,4 +37,4 @@ function Home() {
   )
 }
 
-export default Home
+export default Mesin
