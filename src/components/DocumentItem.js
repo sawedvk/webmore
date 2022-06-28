@@ -1,17 +1,16 @@
 import React from 'react';
-import {Logo} from '../assets/document.png';
-import {Delete} from '../assets/Trash 1.png';
+
 import '../styles/DocumentItem.css';
 
 function DocumentItem({name}) {
   return (
     <div className='documentItem'>
         <div className='leftSide'>
-            <img src={Logo}/>
+            <img src='/assets/document.jpeg'/>
         </div>
         <div className='rightSide'>
             <h2>{name}.pdf</h2>
-            <img src={Delete}/>
+            <img src='/assets/Trash.png'/>
         </div>
     </div>
   )

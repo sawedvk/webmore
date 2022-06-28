@@ -1,7 +1,4 @@
 import React from 'react';
-import { Logo } from '../assets/logo.png';
-import { Person } from '../assets/Group 8.png';
-import { Notif } from '../assets/Notif.png';
 import { Link } from 'react-router-dom';
 import "../styles/NavBar.css";
 
@@ -9,12 +6,12 @@ function NavBar() {
     return (
     <div className='navbar'>
         <div className='leftSide'>
-            <Link to="/"><img src={Logo}/></Link>
+            <Link to="/"><img src='/assets/logo.jpeg'/></Link>
         </div>
         <div className='rightSide'>
             <Link to="/pengguna">Pengguna</Link>
-            <Link to="/pengguna"><img src={Person}/></Link>
-            <Link to="/notifikasi"><img src={Notif}/></Link>
+            <Link to="/pengguna"><img src='/assets/person.png'/></Link>
+            <Link to="/notifikasi"><img src='/assets/Notif.png'/></Link>
         </div>
     </div>
   )

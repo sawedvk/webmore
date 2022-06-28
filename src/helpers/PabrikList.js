@@ -1,4 +1,4 @@
-import Pabrik from '../assets/pabrik.png';
+import Pabrik from '/assets/pabrik.png';
 
 export const PabrikList = [
     {

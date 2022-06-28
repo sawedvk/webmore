@@ -1,13 +1,12 @@
-import React from 'react'
-import {Logo} from '../assets/logo.jpeg';
+import React from 'react';
 import {Link} from 'react-router-dom';
-// import "../styles.StartPages.css";
+import "../styles/StartPage.css";
 
 function Login() {
   return (
     <div className='login'>
         <div className='leftSide'>
-            {/* <img src={Logo}/> */}
+            <img src='/assets/logo.jpeg'/>
         </div>
         <div className='rightSide'>
             <h2>MASUK</h2>
