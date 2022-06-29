@@ -1,10 +1,12 @@
 .leftSide {
-    width: 50%;
-    height: 100%;
     color: #1DA0FF;
 }
 
+.leftSide,.img-side{
+    height: 100vh;
+}
+
 .rightSide {
-    width: 50%;
-    height: 100%;
+    display: flex;
+    justify-content: center;
 }

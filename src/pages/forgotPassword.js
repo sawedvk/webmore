@@ -1,24 +1,22 @@
 import React from 'react';
-// import {Logo} from '../assets/logo.jpeg';
 import {Link} from 'react-router-dom';
 
-function Verification() {
+function forgotPassword() {
   return (
-    <div className='verification d-flex'>
+    <div className='forgotPassword d-flex'>
         <div className='leftSide'>
           <img src='/assets/logo.jpeg' className='w-full img-side' />
         </div>
         <div className='rightSide w-100'>
           <div className='mt-5 p-3 w-75'>
-            <h2 className='text-center fw-bold mb-5'>VERIFIKASI</h2>
-            <p className='m-0 fs-6 fw-bold'>Kode Verifikasi telah dikirimkan ke Email anda.</p>
-            <p className='m-0 fs-6 fw-bold'>Silahkan masukan untuk mengverifikasi Email anda.</p>
+            <h2 className='text-center fw-bold mb-5'>LUPA KATA SANDI</h2>
+            <p className='m-0 fs-6 fw-bold'>Silahkan masukan Email dan No. Telepon anda.</p>
+            <p className='m-0 fs-6 fw-bold'>Password akan dikirimkan ke email anda.</p>
             <form>
-                <input name='code' className='form-control rounded-pill mt-3 mb-3' type='text' placeholder='Masukan Kode'/>
+                <input name='code' className='form-control rounded-pill mt-3' type='email' placeholder='Alamat Email'/>
+                <input name='code' className='form-control rounded-pill mt-3 mb-3' type='tel' pattern='[0-9]{12}' placeholder='No. Telepon'/>
 
-                <Link><p>Kirim ulang kode verifikasi</p></Link>
-
-                <Link to='/home'>
+                <Link to='/'>
                   <input name='verifikasi' className='btn btn-primary btn-lg mt-3 w-100 rounded-pill fw-bold' type='submit'/>
                 </Link>
                 <br/>
@@ -35,4 +33,4 @@ function Verification() {
   )
 }
 
-export default Verification
+export default forgotPassword
