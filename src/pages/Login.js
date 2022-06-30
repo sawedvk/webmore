@@ -14,13 +14,13 @@ function Login() {
           <form>
             <input name='email' className='form-control rounded-pill' type='email' placeholder='Alamat Email' />
 
-            <input name='password' className='form-control rounded-pill mt-3 mb-3' type='password' placeholder='Kata Sandi'/>
+            <input name='password' className='form-control rounded-pill mt-3 mb-3' type='password' placeholder='Kata Sandi' />
             <p className='text-end'><Link to='/forgotpassword'>Lupa Kata Sandi?</Link></p>
-            <br/>
-            <Link to='/home'>
+            <br />
+            <Link to='/pabrik'>
               <input name='signin' className='btn btn-primary btn-lg mt-3 mb-5 w-100 rounded-pill fw-bold' type='submit' />
             </Link>
-            
+
           </form>
           <p className='mt-5  text-center'>Belum punya akun? <Link to='/signup'> Daftar</Link></p>
         </div>

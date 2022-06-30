@@ -8,7 +8,7 @@ function ItemPabrik(props) {
 
   return (
     <div className='col-4 mx-auto text-center mt-3'>
-      <Link className='text-black text-decoration-none' to={`/home/${enCodeLink(name)}`}>
+      <Link className='text-black text-decoration-none' to={`/pabrik/${enCodeLink(name)}`}>
         <div className='border my-border-radius shadow'>
           <img
             src={image}

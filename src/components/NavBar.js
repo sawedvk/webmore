@@ -6,11 +6,11 @@ function NavBar() {
     return (
     <div className='navbar'>
         <div className='leftSide'>
-            <Link to="/"><img src='/assets/logo.jpeg'/></Link>
+            <Link to="/pabrik"><img src='/assets/logo.jpeg'/></Link>
         </div>
         <div className='rightSide'>
-            <Link to="/pengguna">Pengguna</Link>
-            <Link to="/pengguna"><img src='/assets/person.png'/></Link>
+            <Link to="/profile">Pengguna</Link>
+            <Link to="/profile"><img src='/assets/person.png'/></Link>
             <Link to="/notifikasi"><img src='/assets/Notif.png'/></Link>
         </div>
     </div>

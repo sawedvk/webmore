@@ -7,6 +7,8 @@ import ForgotPassword from './pages/forgotPassword';
 import Verification from './pages/Verification';
 import Mesin from './pages/Mesin';
 import ProfilePage from './pages/profile';
+import Notification from './pages/Notification';
+import Monitoring from './pages/Monitoring';
 
 function App() {
 
@@ -48,14 +50,14 @@ function App() {
 
           <Route
             exact
-            path={'/home'}
+            path={'/pabrik'}
           >
             <Home />
           </Route>
 
           <Route
             exact
-            path={`/home/:homeId`}
+            path={`/pabrik/:homeId`}
             render={(props) => <Mesin {...props} />}
           />
 
@@ -65,6 +67,19 @@ function App() {
           >
             <ProfilePage />
           </Route>
+
+          <Route
+            exact
+            path={`/notifikasi`}
+          >
+            <Notification />
+          </Route>
+
+          <Route
+            exact
+            path={`/mesin/:homeId`}
+            render={(props) => <Monitoring {...props} />}
+          />
 
         </Switch>
         {/* <NavBar/> */}
