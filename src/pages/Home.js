@@ -1,36 +1,42 @@
 import React from 'react';
+import ItemPabrik from '../components/ItemPabrik.js';
 import NavBar from '../components/NavBar.js';
+import { PabrikList } from '../helpers/PabrikList.js';
 // import ItemPabrik from '../components/ItemPabrik';
 // import {PabrikList} from '../helpers/PabrikList';
 
 function Home() {
   return (
     <div className='home'>
-        <NavBar/>
-        <div className='content d-flex'>
-            <div className='navigator'>
-              <img/>
-            </div>
-            <div className='mt-5 w-100 d-flex'>
-             <h1 className='w-25 me-2 fw-bold'>Daftar Pabrik</h1>
-             <button className='w-25 me-5 btn btn-primary rounded-pill'>+ Tambah</button>
-             <p className='me-5'></p>
-             <p className='me-5'></p>
-             <p className='me-5'></p>
-             <input name='search' className='form-control rounded-pill w-50 mx-5' type='search' placeholder='Cari'/>
-              <div className='pabrik'>
-                {/* {PabrikList.map((menuItem, key) => {
-                return (
-                  <ItemPabrik
-                  key={key}
-                  image={menuItem.image}
-                  name={menuItem.name}
-                  caption={menuItem.caption}/>
-                );
-               })} */}
-              </div>
-            </div>
+      <NavBar />
+      <div className='px-5 my-2 border container rounded-3 shadow'>
+        <button className='btn'>
+          <img
+            src={'/assets/home.svg'}
+          />
+        </button>
+      </div>
+
+      <div className='d-flex container'>
+        <div className='mt-0 w-100 d-flex justify-content-between py-2'>
+          <h1 className='me-2 fs-3 fw-bold text-nowrap'>Daftar Pabrik</h1>
+          <button className='me-5 px-5 btn-sm btn text-nowrap btn-primary rounded-pill'>+ Tambah</button>
+          <input name='search' className='form-control rounded-pill w-25' type='search' placeholder='Cari' />
         </div>
+      </div>
+      <div className='pabrik container px-0'>
+        <div className='row mx-0'>
+          {PabrikList.map((menuItem, key) => {
+            return (
+              <ItemPabrik
+                key={key}
+                image={menuItem.image}
+                name={menuItem.name}
+                caption={menuItem.caption} />
+            );
+          })}
+        </div>
+      </div>
     </div>
   )
 }

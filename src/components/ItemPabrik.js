@@ -1,14 +1,26 @@
 import React from 'react';
-import "../styles/itemPabrik.css";
+import { Link, useParams } from 'react-router-dom';
+import { enCodeLink } from '../utilities';
 
-function itemPabrik() {
+function ItemPabrik(props) {
+
+  const { image, name, caption } = props
+
   return (
-    <div className='itemPabrik'>
-        {/* <div className='Foto' style={{backgroundImage:`url(${image})`}}></div> */}
-        {/* <h1>{name}</h1> */}
-        {/* <p>{caption}</p> */}
+    <div className='col-4 mx-auto text-center mt-3'>
+      <Link className='text-black text-decoration-none' to={`/home/${enCodeLink(name)}`}>
+        <div className='border my-border-radius shadow'>
+          <img
+            src={image}
+            className={'w-100'}
+          />
+          <p className='fw-bold mb-0'>{name}</p>
+          <p>{caption}</p>
+        </div>
+      </Link>
     </div>
+
   )
 }
 
-export default itemPabrik 
+export default ItemPabrik 

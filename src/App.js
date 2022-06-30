@@ -5,10 +5,12 @@ import Home from './pages/Home';
 import SignUp from './pages/SignUp';
 import ForgotPassword from './pages/forgotPassword';
 import Verification from './pages/Verification';
+import Mesin from './pages/Mesin';
+import ProfilePage from './pages/profile';
 
 function App() {
 
-  const data = [1,2,3,4,5]
+  const data = [1, 2, 3, 4, 5]
 
   return (
     <div className="App">
@@ -25,7 +27,7 @@ function App() {
             exact
             path={'/forgotpassword'}
           >
-            <ForgotPassword 
+            <ForgotPassword
             // data={data}
             />
           </Route>
@@ -49,6 +51,19 @@ function App() {
             path={'/home'}
           >
             <Home />
+          </Route>
+
+          <Route
+            exact
+            path={`/home/:homeId`}
+            render={(props) => <Mesin {...props} />}
+          />
+
+          <Route
+            exact
+            path={`/profile`}
+          >
+            <ProfilePage />
           </Route>
 
         </Switch>

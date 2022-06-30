@@ -12,3 +12,13 @@ body {
   padding: 0;
   margin: 0;
 }
+
+.my-border-radius {
+  border-radius: 20px;
+}
+
+.my-custom-form {
+  border:none;
+  outline: none;
+  
+}

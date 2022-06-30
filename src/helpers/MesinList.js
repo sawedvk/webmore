@@ -1,8 +1,17 @@
-import Mesin from '../assets/mesin.png';
 
 export const MesinList = [
     {
-        image : Mesin,
+        image : '/assets/mesin.png',
+        name : "Flottweg Z5E",
+        type : "Z5E",
+        brand : "Flottweg",
+    }, {
+        image : '/assets/mesin.png',
+        name : "Flottweg Z5E",
+        type : "Z5E",
+        brand : "Flottweg",
+    }, {
+        image : '/assets/mesin.png',
         name : "Flottweg Z5E",
         type : "Z5E",
         brand : "Flottweg",
