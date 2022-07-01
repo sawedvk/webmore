@@ -15,6 +15,8 @@ function Home() {
         <button className='btn'>
           <img
             src={'/assets/home.svg'}
+            width={80}
+            height={80}
           />
         </button>
       </div>
@@ -22,7 +24,7 @@ function Home() {
       <div className='d-flex container'>
         <div className='mt-0 w-100 d-flex justify-content-between py-2'>
           <h1 className='me-2 fs-3 fw-bold text-nowrap'>Daftar Pabrik</h1>
-          <button onClick={()=> router.push('/tambah-pabrik')} className='me-5 px-5 btn-sm btn text-nowrap btn-primary rounded-pill'>+ Tambah</button>
+          <button onClick={() => router.push('/tambah-pabrik')} className='me-5 px-5 btn-sm btn text-nowrap btn-primary rounded-pill'>+ Tambah</button>
           <input name='search' className='form-control rounded-pill w-25' type='search' placeholder='Cari' />
         </div>
       </div>

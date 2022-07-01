@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import NavBar from '../components/NavBar.js';
 import Footer from '../components/Footer.js';
 import MonitorItem from '../components/MonitorItem';
@@ -9,11 +9,18 @@ import { Link, Router, useHistory } from 'react-router-dom';
 import PemantauanComp from '../components/PemantauanComp.js';
 import LaporanComp from '../components/LaporanComp.js';
 import DocumentComp from '../components/DocumentComp.js';
+import HapusMesinModal from '../components/HapusMesinModal.js';
 
 
 function Monitoring() {
 
   const router = useHistory()
+
+  const [show, setShow] = useState(false);
+
+  function handleClose() {
+    setShow(false)
+  }
 
   return (
     <div className='monitoring'>
@@ -28,6 +35,7 @@ function Monitoring() {
                 src={'/assets/home.svg'}
                 width={80}
                 height={80}
+                onClick={() => router.push('/pabrik')}
               />
             </button>
             <div className='me-3' >
@@ -62,14 +70,18 @@ function Monitoring() {
 
             <div className='w-100 d-flex justify-content-end'>
               <div className=''>
-                <button className='btn btn-primary rounded-pill d-flex'>
-                  <img src='/assets/Edit.png' width={20} height={20} className='ms-1 me-2 w-25' onClick={()=> router.push('/ubah-mesin')} />
+                <button className='btn btn-primary rounded-pill d-flex' onClick={() => router.push('/ubah-mesin')} >
+                  <img src='/assets/Edit.png' width={20} height={20} className='ms-1 me-2 w-25' />
                   Ubah
                 </button>
-                <button className='btn btn-danger rounded-pill d-flex mt-2'>
-                  <img src='/assets/Edit.png' width={20} height={20} className='ms-1 me-2 w-25' />
+                <button className='btn btn-danger rounded-pill d-flex mt-2' onClick={() => setShow(true)}>
+                  <img src='/assets/Trash.png' width={20} height={20} className='ms-1 me-2 w-25' />
                   Hapus
                 </button>
+                <HapusMesinModal
+                  show={show}
+                  handleClose={handleClose}
+                />
               </div>
             </div>
           </div>
@@ -83,13 +95,13 @@ function Monitoring() {
             className="mb-5 w-100"
           >
             <Tab eventKey="Pemantauan" title="Pemantauan" className="w-100">
-              <PemantauanComp/>
+              <PemantauanComp />
             </Tab>
             <Tab eventKey="Laporan" title="Laporan">
-              <LaporanComp/>
+              <LaporanComp />
             </Tab>
             <Tab eventKey="Dokumen" title="Dokumen">
-              <DocumentComp/>
+              <DocumentComp />
             </Tab>
           </Tabs>
         </div>
