@@ -3,8 +3,18 @@ import NavBar from '../components/NavBar.js';
 import Footer from '../components/Footer.js';
 import MonitorItem from '../components/MonitorItem';
 import { MonitoringList } from '../helpers/MonitoringList';
+import Tab from 'react-bootstrap/Tab';
+import Tabs from 'react-bootstrap/Tabs';
+import { Link, Router, useHistory } from 'react-router-dom';
+import PemantauanComp from '../components/PemantauanComp.js';
+import LaporanComp from '../components/LaporanComp.js';
+import DocumentComp from '../components/DocumentComp.js';
+
 
 function Monitoring() {
+
+  const router = useHistory()
+
   return (
     <div className='monitoring'>
       <NavBar />
@@ -50,39 +60,38 @@ function Monitoring() {
               />
             </div>
 
-            <div className='mx-auto flex-column'>
-              <div className='d-flex align-items-end'>
+            <div className='w-100 d-flex justify-content-end'>
+              <div className=''>
                 <button className='btn btn-primary rounded-pill d-flex'>
-                  <img src='/assets/Edit.png' width={20} height={20} className='ms-1 me-2 w-25' />
+                  <img src='/assets/Edit.png' width={20} height={20} className='ms-1 me-2 w-25' onClick={()=> router.push('/ubah-mesin')} />
                   Ubah
                 </button>
+                <button className='btn btn-danger rounded-pill d-flex mt-2'>
+                  <img src='/assets/Edit.png' width={20} height={20} className='ms-1 me-2 w-25' />
+                  Hapus
+                </button>
               </div>
-              <button className='btn btn-danger rounded-pill d-flex'>
-                <img src='/assets/Edit.png' width={20} height={20} className='ms-1 me-2 w-25' />
-                Hapus
-              </button>
             </div>
           </div>
-
-
-        </div>
-        <div className='nav'>
-          <nav className='navbar container' >
-
-          </nav>
         </div>
 
 
-        <div className='monitor d-flex container'>
-          {MonitoringList.map((menuItem, key) => {
-            return (
-              <MonitorItem
-                key={key}
-                data={menuItem.data}
-                satuan={menuItem.satuan}
-                ket={menuItem.ket} />
-            );
-          })}
+        <div className='nav container mt-5'>
+          <Tabs
+            defaultActiveKey="Pemantauan"
+            id="uncontrolled-tab-example"
+            className="mb-5 w-100"
+          >
+            <Tab eventKey="Pemantauan" title="Pemantauan" className="w-100">
+              <PemantauanComp/>
+            </Tab>
+            <Tab eventKey="Laporan" title="Laporan">
+              <LaporanComp/>
+            </Tab>
+            <Tab eventKey="Dokumen" title="Dokumen">
+              <DocumentComp/>
+            </Tab>
+          </Tabs>
         </div>
       </div>
     </div>

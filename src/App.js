@@ -9,6 +9,10 @@ import Mesin from './pages/Mesin';
 import ProfilePage from './pages/profile';
 import Notification from './pages/Notification';
 import Monitoring from './pages/Monitoring';
+import TambahPabrik from './pages/TambahPabrik';
+import UbahPabrik from './pages/UbahPabrik';
+import TambahMesin from './pages/TambahMesin';
+import UbahMesin from './pages/UbahMesin';
 
 function App() {
 
@@ -80,6 +84,34 @@ function App() {
             path={`/mesin/:homeId`}
             render={(props) => <Monitoring {...props} />}
           />
+
+          <Route
+            exact
+            path={`/tambah-pabrik`}
+          >
+            <TambahPabrik />
+          </Route>
+
+          <Route
+            exact
+            path={`/ubah-pabrik`}
+          >
+            <UbahPabrik />
+          </Route>
+
+          <Route
+            exact
+            path={`/tambah-mesin`}
+          >
+            <TambahMesin />
+          </Route>
+
+          <Route
+            exact
+            path={`/ubah-mesin`}
+          >
+            <UbahMesin />
+          </Route>
 
         </Switch>
         {/* <NavBar/> */}

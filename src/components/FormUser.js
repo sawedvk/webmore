@@ -47,7 +47,7 @@ function FormUser() {
           </div>
 
           <Link to='/'>
-            <button className='form-control rounded-pill mt-5 btn btn-warning fw-bold'>KELUAR</button>
+            <button className='form-control rounded-pill mt-5 btn btn-danger fw-bold'>KELUAR</button>
           </Link>
         </form>
       </div>

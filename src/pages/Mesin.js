@@ -5,22 +5,26 @@ import ItemMesin from '../components/ItemMesin';
 import { MesinList } from '../helpers/MesinList';
 import ItemPabrik from '../components/ItemPabrik.js';
 import { PabrikList } from '../helpers/PabrikList.js';
-import { Link } from 'react-router-dom';
+import { Link, Router, useHistory } from 'react-router-dom';
 
 export default function Mesin() {
+
+  const router = useHistory()
+
   return (
     <div className='mesin'>
       <NavBar />
       <div className='px-5 my-2 border container rounded-3 shadow d-flex align-items-center'>
-        <Link to='/pabrik'>
+        {/* <Link to='/pabrik'> */}
           <button className='btn'>
             <img
               src={'/assets/home.svg'}
               width={80}
               height={80}
+              onClick={()=>router.push('/pabrik')}
             />
           </button>
-        </Link>
+        {/* </Link> */}
 
         <div className='me-3' >
           <img
@@ -39,28 +43,31 @@ export default function Mesin() {
           <a href='#' className='text-decoration-none' target={"_blank"}> buka peta </a>
         </div>
 
-        <div className='mx-auto w-50 flex-column'>
-          <div className='d-flex align-items-end'>
-            <button className='btn btn-primary rounded-pill d-flex'>
-              <img src='/assets/Profile.png' width={20} height={20} className='ms-1 me-2 w-25' />
-              Anggota
-            </button>
-            <button className='btn btn-primary rounded-pill d-flex'>
+        <div className='w-100 d-flex justify-content-end'>
+          <div className='flex-column'>
+            <div className='d-flex align-items-end'>
+              <button className='btn btn-primary rounded-pill d-flex'>
+                <img src='/assets/Profile.png' width={20} height={20} className='ms-1 me-2 w-25' />
+                Anggota
+              </button>
+              <button className='btn btn-primary rounded-pill d-flex' onClick={()=> router.push('/ubah-pabrik')}>
+                <img src='/assets/Edit.png' width={20} height={20} className='ms-1 me-2 w-25' />
+                Ubah
+              </button>
+            </div>
+
+            <button className='btn btn-danger rounded-pill d-flex mt-2'>
               <img src='/assets/Edit.png' width={20} height={20} className='ms-1 me-2 w-25' />
-              Ubah
+              Hapus
             </button>
           </div>
-
-          <button className='btn btn-danger rounded-pill d-flex'>
-            <img src='/assets/Edit.png' width={20} height={20} className='ms-1 me-2 w-25' />
-            Hapus
-          </button>
         </div>
+
       </div>
       <div className='d-flex container'>
         <div className='mt-0 w-100 d-flex justify-content-between py-2'>
           <h1 className='me-2 fs-3 fw-bold text-nowrap'>Daftar Pabrik</h1>
-          <button className='me-5 px-5 btn-sm btn text-nowrap btn-primary rounded-pill'>+ Tambah</button>
+          <button className='me-5 px-5 btn-sm btn text-nowrap btn-primary rounded-pill' onClick={()=> router.push('/tambah-mesin')} >+ Tambah</button>
           <input name='search' className='form-control rounded-pill w-25' type='search' placeholder='Cari' />
         </div>
       </div>

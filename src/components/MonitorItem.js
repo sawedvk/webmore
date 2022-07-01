@@ -1,12 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import ModalComponent from './modalComponent';
 
 function MonitorItem({ data, satuan, ket }) {
+
+  const [show, setShow] = useState(false);
+
+  function handleClose () {
+    setShow(false)
+  }
+
   return (
     <div className='col-2 mx-auto text-center mt-3 border my-border-radius shadow'>
-      <Link to='/setting'>
+      <button className='btn' onClick={()=>setShow(true)}>
         <img src='/assets/Settings.png' width={30} height={30} className='mt-2' />
-      </Link>
+      </button>
+      
       <div className='isiData mt-3'>
         <h1 className='fw-bold fs-1'>{data}</h1>
       </div>
@@ -14,6 +23,11 @@ function MonitorItem({ data, satuan, ket }) {
         <h3 className='fw-bold fs-4'>{satuan}</h3>
         <h4 className='fw-bold fs-5'>{ket}</h4>
       </div>
+
+      <ModalComponent
+        show={show}
+        handleClose={handleClose}
+      />
     </div>
   )
 }
