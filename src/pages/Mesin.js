@@ -5,12 +5,15 @@ import ItemMesin from '../components/ItemMesin';
 import { MesinList } from '../helpers/MesinList';
 import ItemPabrik from '../components/ItemPabrik.js';
 import { PabrikList } from '../helpers/PabrikList.js';
-import { Link, Router, useHistory } from 'react-router-dom';
+import { Link, Router, useHistory, useParams } from 'react-router-dom';
 import HapusPabrikModal from '../components/HapusPabrikModal.js';
+import NavbarHeader from '../components/navbarHeader.js';
 
 export default function Mesin() {
 
   const router = useHistory()
+  const { homeId } = useParams()
+  console.log(homeId)
 
   const [show, setShow] = useState(false);
 
@@ -21,36 +24,40 @@ export default function Mesin() {
   return (
     <div className='mesin'>
       <NavBar />
-      <div className='px-5 my-2 border container rounded-3 shadow d-flex align-items-center'>
-        {/* <Link to='/pabrik'> */}
-        <button className='btn'>
+      <NavbarHeader
+        step1={1}
+        homeId={homeId}
+      />
+
+      {/* <Link to='/pabrik'> */}
+      {/* <button className='btn'>
           <img
             src={'/assets/home.svg'}
             width={80}
             height={80}
             onClick={() => router.push('/pabrik')}
           />
-        </button>
-        {/* </Link> */}
+        </button> */}
+      {/* </Link> */}
 
-        <div className='me-3' >
+      {/* <div className='me-3' >
           <img
             src={'/assets/chevron-left.png'}
             width={30}
             height={80}
           />
-        </div>
+        </div> */}
 
-        <div className='flex-column '>
+      {/* <div className='flex-column '>
           <img
             src={'/assets/pabrik.svg'}
             width={70}
             height={70}
           />
           <a href='#' className='text-decoration-none' target={"_blank"}> buka peta </a>
-        </div>
+        </div> */}
 
-        <div className='w-100 d-flex justify-content-end'>
+      {/* <div className='w-100 d-flex justify-content-end'>
           <div className='flex-column'>
             <div className='d-flex align-items-end'>
               <button className='btn btn-primary rounded-pill d-flex'>
@@ -71,10 +78,11 @@ export default function Mesin() {
               show={show}
               handleClose={handleClose}
             />
-          </div>
-        </div>
+          </div> */}
+      {/* </div> */}
 
-      </div>
+      {/* </div> */}
+
       <div className='d-flex container'>
         <div className='mt-0 w-100 d-flex justify-content-between py-2'>
           <h1 className='me-2 fs-3 fw-bold text-nowrap'>Daftar Mesin</h1>

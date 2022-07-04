@@ -23,8 +23,9 @@ function DocumentComp() {
             </div>
             <div className='doc d-flex'>
                 {
-                    DocumentList.map((row) => (
+                    DocumentList.map((row, key) => (
                         <DocumentItems
+                            key={key}
                             name={row.name}
                         />
                     ))

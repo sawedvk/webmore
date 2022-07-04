@@ -81,7 +81,7 @@ function App() {
 
           <Route
             exact
-            path={`/mesin/:homeId`}
+            path={`/pabrik/:homeId/mesin/:mesinId`}
             render={(props) => <Monitoring {...props} />}
           />
 

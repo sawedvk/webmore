@@ -5,11 +5,12 @@ import MonitorItem from '../components/MonitorItem';
 import { MonitoringList } from '../helpers/MonitoringList';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
-import { Link, Router, useHistory } from 'react-router-dom';
+import { Link, Router, useHistory, useParams } from 'react-router-dom';
 import PemantauanComp from '../components/PemantauanComp.js';
 import LaporanComp from '../components/LaporanComp.js';
 import DocumentComp from '../components/DocumentComp.js';
 import HapusMesinModal from '../components/HapusMesinModal.js';
+import NavbarHeader from '../components/navbarHeader.js';
 
 
 function Monitoring() {
@@ -22,15 +23,22 @@ function Monitoring() {
     setShow(false)
   }
 
+  const {homeId,mesinId} = useParams()
+
   return (
     <div className='monitoring'>
       <NavBar />
       <div className='content'>
+        <NavbarHeader
+        step2={2}
+        step1={1}
+        homeId={homeId}
+        mesinId={mesinId}
+        />
 
-
-        <div className='navigator'>
-          <div className='px-5 my-2 border container rounded-3 shadow d-flex align-items-center'>
-            <button className='btn'>
+        {/* <div className='navigator'> */}
+        {/* <div className='px-5 my-2 border container rounded-3 shadow d-flex align-items-center'> */}
+        {/* <button className='btn'>
               <img
                 src={'/assets/home.svg'}
                 width={80}
@@ -44,8 +52,8 @@ function Monitoring() {
                 width={30}
                 height={80}
               />
-            </div>
-            <div className='flex-column'>
+            </div> */}
+        {/* <div className='flex-column'>
               <img
                 src={'/assets/pabrik.svg'}
                 width={70}
@@ -66,26 +74,28 @@ function Monitoring() {
                 width={70}
                 height={70}
               />
-            </div>
+            </div> */}
 
-            <div className='w-100 d-flex justify-content-end'>
-              <div className=''>
-                <button className='btn btn-primary rounded-pill d-flex' onClick={() => router.push('/ubah-mesin')} >
-                  <img src='/assets/Edit.png' width={20} height={20} className='ms-1 me-2 w-25' />
-                  Ubah
-                </button>
-                <button className='btn btn-danger rounded-pill d-flex mt-2' onClick={() => setShow(true)}>
-                  <img src='/assets/Trash.png' width={20} height={20} className='ms-1 me-2 w-25' />
-                  Hapus
-                </button>
-                <HapusMesinModal
-                  show={show}
-                  handleClose={handleClose}
-                />
-              </div>
-            </div>
+
+        {/* </div> */}
+        {/* </div> */}
+
+        {/* <div className='w-100 d-flex justify-content-end'>
+          <div className=''>
+            <button className='btn btn-primary rounded-pill d-flex' onClick={() => router.push('/ubah-mesin')} >
+              <img src='/assets/Edit.png' width={20} height={20} className='ms-1 me-2 w-25' />
+              Ubah
+            </button>
+            <button className='btn btn-danger rounded-pill d-flex mt-2' onClick={() => setShow(true)}>
+              <img src='/assets/Trash.png' width={20} height={20} className='ms-1 me-2 w-25' />
+              Hapus
+            </button>
+            <HapusMesinModal
+              show={show}
+              handleClose={handleClose}
+            />
           </div>
-        </div>
+        </div> */}
 
 
         <div className='nav container mt-5'>

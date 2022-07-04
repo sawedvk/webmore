@@ -4,9 +4,12 @@ import { Link, useParams } from 'react-router-dom';
 import { enCodeLink } from '../utilities';
 
 function ItemMesin({ image, name, type, brand }) {
+
+  const {homeId} = useParams()
+
   return (
     <div className='col-4'>
-      <Link className='text-black text-decoration-none' to={`/mesin/${enCodeLink(name)}`}>
+      <Link className='text-black text-decoration-none' to={`/pabrik/${homeId}/mesin/${enCodeLink(name)}`}>
         <div className='shadow my-border-radius d-flex align-items-center'>
           <img
             src={image}

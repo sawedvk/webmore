@@ -2,16 +2,18 @@ import React from 'react';
 import { useHistory } from 'react-router-dom';
 import ItemPabrik from '../components/ItemPabrik.js';
 import NavBar from '../components/NavBar.js';
+import NavbarHeader from '../components/navbarHeader.js';
 import { PabrikList } from '../helpers/PabrikList.js';
-// import ItemPabrik from '../components/ItemPabrik';
-// import {PabrikList} from '../helpers/PabrikList';
+
+
+
 
 function Home() {
   const router = useHistory();
   return (
     <div className='home'>
       <NavBar />
-      <div className='px-5 my-2 border container rounded-3 shadow'>
+      {/* <div className='px-5 my-2 border container rounded-3 shadow'>
         <button className='btn'>
           <img
             src={'/assets/home.svg'}
@@ -19,7 +21,8 @@ function Home() {
             height={80}
           />
         </button>
-      </div>
+      </div> */}
+      <NavbarHeader/>
 
       <div className='d-flex container'>
         <div className='mt-0 w-100 d-flex justify-content-between py-2'>
