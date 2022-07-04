@@ -20,7 +20,6 @@ function NavbarHeader(props) {
     const [showAnggota, setShowAnggota] = useState(false);
     const [addMember, setAddMember] = useState(false);
     const [ubahMember, setUbahMember] = useState(false);
-    const [showMesin, setShowMesin] = useState(false);
     const [hapusMember, setHapusMember] = useState(false);
     const [hapusMesin, setHapusMesin] = useState(false);
 
@@ -28,10 +27,6 @@ function NavbarHeader(props) {
     function handleClose() {
         setShow(false)
     }
-
-    // function handleCloseMesin() {
-    //     setShowMesin(false)
-    // }
 
     function handleCloseAnggota() {
         setShowAnggota(false)
@@ -191,11 +186,6 @@ function NavbarHeader(props) {
                 show={hapusMesin}
                 handleClose={handleCloseHapusMesin}
             />
-
-            {/* <HapusMesinModal
-                show={showMesin}
-                handleClose={handleCloseMesin}
-            /> */}
 
         </>
     )

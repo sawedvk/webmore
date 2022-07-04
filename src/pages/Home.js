@@ -5,23 +5,12 @@ import NavBar from '../components/NavBar.js';
 import NavbarHeader from '../components/navbarHeader.js';
 import { PabrikList } from '../helpers/PabrikList.js';
 
-
-
-
 function Home() {
   const router = useHistory();
   return (
     <div className='home'>
       <NavBar />
-      {/* <div className='px-5 my-2 border container rounded-3 shadow'>
-        <button className='btn'>
-          <img
-            src={'/assets/home.svg'}
-            width={80}
-            height={80}
-          />
-        </button>
-      </div> */}
+      
       <NavbarHeader/>
 
       <div className='d-flex container'>

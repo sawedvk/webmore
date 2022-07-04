@@ -34,7 +34,6 @@ function App() {
             path={'/forgotpassword'}
           >
             <ForgotPassword
-            // data={data}
             />
           </Route>
 
@@ -114,8 +113,7 @@ function App() {
           </Route>
 
         </Switch>
-        {/* <NavBar/> */}
-        {/* <Login /> */}
+        
       </Router>
     </div>
   );

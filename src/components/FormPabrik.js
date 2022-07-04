@@ -5,7 +5,7 @@ function FormPabrik() {
   const router = useHistory()
   return (
     <div className='formPabrik w-75 mx-auto'>
-      {/* <form> */}
+      
         <div className='row mt-3'>
           <p className='col-4'>Nama Pabrik</p>
           <div className='col-8'>
@@ -53,7 +53,6 @@ function FormPabrik() {
           <button className='btn btn-danger w-25 ms-3 fw-bold' onClick={() => router.goBack()}>BATAL</button>
         </div>
 
-      {/* </form> */}
     </div>
   )
 }

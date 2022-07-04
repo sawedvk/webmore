@@ -11,7 +11,7 @@ function DocumentItems({ name }) {
 
     return (
         <div className='col-3 mt-2 mx-2 '>
-            {/* <Link className='text-black text-decoration-none' to={`/mesin/${enCodeLink(name)}`}> */}
+            
             <div className='shadow my-border-radius d-flex align-items-center'>
                 <img
                     className='mx-1'
@@ -34,7 +34,7 @@ function DocumentItems({ name }) {
                     handleClose={handleClose}
                 />
             </div>
-            {/* </Link> */}
+
         </div>
     )
 }

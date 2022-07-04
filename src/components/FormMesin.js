@@ -7,7 +7,7 @@ function FormMesin() {
 
     return (
         <div className='formMesin w-75 mx-auto'>
-            {/* <form>   */}
+            
                 <div className='row mt-3'>
                     <p className='col-4'>Nama Mesin</p>
                     <div className='col-8'>
@@ -40,7 +40,7 @@ function FormMesin() {
                     <button className='btn btn-primary w-25 me-3'>SELESAI</button>
                     <button onClick={()=>router.goBack()} className='btn btn-danger w-25 ms-3'>BATAL</button>
                 </div>
-            {/* </form>  */}
+            
 
         </div>
     )

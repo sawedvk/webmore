@@ -1,5 +1,4 @@
 import React from 'react';
-// import {Logo} from '../assets/logo.jpeg';
 import {Link} from 'react-router-dom';
 import "../styles/StartPage.css";
 
