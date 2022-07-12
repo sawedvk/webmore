@@ -1,11 +1,13 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, {useState, useContext} from 'react';
+import { AuthContext } from "../context/auth"
 // import {Logo} from '../assets/logo.jpeg';
 import { Link, useHistory } from 'react-router-dom';
 
 const baseUrl = 'http://moreapp-env.eba-ep9ahmfp.ap-southeast-1.elasticbeanstalk.com'
 
 function Verification() {
+  const { isAuthenticated, loginSuccess, loginFailed } = useContext(AuthContext)
   const history = useHistory()
   const [kode, setKode] = useState("")
   const [error, setError] = useState("")
@@ -25,6 +27,7 @@ function Verification() {
       localStorage.setItem("refreshToken", resLog.data.data.refreshToken)
       localStorage.removeItem("lastEmail")
       localStorage.removeItem("lastPassword")
+      loginSuccess()
       history.push("/pabrik")
     } catch(err){
       setIsError(true)
@@ -33,6 +36,7 @@ function Verification() {
           setIsError(false)
           setError("")
         }, 2000)
+        loginFailed()
     }
   }
 

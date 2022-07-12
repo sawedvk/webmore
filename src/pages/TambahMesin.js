@@ -8,7 +8,9 @@ function TambahMesin() {
       <NavBar />
       <div className='container'>
         <h1 className='text-center fw-bold mt-3 mb-5'>Tambah Mesin</h1>
-        <FormMesin />
+        <FormMesin 
+          create={true}
+        />
       </div>
     </div>
   )
