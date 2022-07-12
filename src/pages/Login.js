@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import React, {useState, useContext} from 'react';
+import { AuthContext } from "../context/auth"
+import { Link, useHistory, Redirect } from 'react-router-dom';
 import "../styles/StartPage.css";
 import axios from 'axios'
 
@@ -8,12 +9,12 @@ const baseUrl = 'http://moreapp-env.eba-ep9ahmfp.ap-southeast-1.elasticbeanstalk
 //login udah connect ke api
 
 const Login = () =>{
+  const { isAuthenticated, loginSuccess, loginFailed } = useContext(AuthContext)
   const history = useHistory()
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [error, setError] = useState("")
   const [isError, setIsError] = useState(false)
-
   const userLogin = async() => {
     const user = {email, password}
     try{
@@ -22,8 +23,9 @@ const Login = () =>{
       localStorage.setItem("refreshToken", res.data.data.refreshToken)
       setEmail("")
       setPassword("")
-      console.log(res)
-      history.push("/pabrik")
+      loginSuccess()
+      // console.log(res)
+      // history.push("/pabrik")
     } catch (err){
       if(err.response.data.message === "Email yang ada masukan belum terverifikasi") {
         localStorage.setItem("lastEmail", email)
@@ -40,10 +42,14 @@ const Login = () =>{
         setIsError(false)
         setError("")
       }, 2000)
+      loginFailed()
       console.log('error: ', err.response.data.message)
 
     }
     
+  }
+  if(isAuthenticated){
+    return <Redirect to="/pabrik"/>
   }
 
   return (
