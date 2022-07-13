@@ -1,3 +1,4 @@
+/* eslint-disable no-lone-blocks */
 import React, { useEffect, useState } from 'react';
 import NavBar from '../components/NavBar';
 import ItemNotifikasi from '../components/ItemNotifikasi';
@@ -8,7 +9,9 @@ import axios from 'axios'
 const baseUrl = 'http://moreapp-env.eba-ep9ahmfp.ap-southeast-1.elasticbeanstalk.com'
 
 const Notification = () => {
-  const [notif, setNotif] = useState()
+  const [notif, setNotif] = useState([])
+  const [pabrik, setPabrik] = useState({})
+  const [mesin, setMesin] = useState({})
   const token = localStorage.getItem("accessToken")
   const getNotif = async() => {
     try{
@@ -23,6 +26,7 @@ const Notification = () => {
       console.log(err.message)
     }
   }
+
   useEffect(() => {
     getNotif()
   }, [])
@@ -35,12 +39,13 @@ const Notification = () => {
         <h1 className='mt-4 text-center fw-bold mb-3'>Pemberitahuan</h1>
 
         <div className='notif'>
-          {NotifList.map((menuItem, key) => {
+          {notif.map((menuItem, key) => {
             return (
               <ItemNotifikasi
                 key={key}
-                name={menuItem.name}
-                location={menuItem.location} />
+                name={menuItem.nama_mesin}
+                location={menuItem.nama_pabrik} 
+                myNotif = {menuItem}/>
             );
           })}
         </div>

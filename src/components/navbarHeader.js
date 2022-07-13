@@ -64,11 +64,10 @@ const NavbarHeader = (props) => {
                     'Authorization': `Bearer ${token}`
                 }
             })
-            // setTimeout(() => {
-            // }, 2000)
-            // console.log(res)
+            setTimeout(() => {
+            }, 2000)
+            console.log(res)
             setPabrik(res.data.data.pabrik)
-            console.log(pabrik)
         } catch (err) {
             console.log(err.message)
         }
@@ -83,7 +82,6 @@ const NavbarHeader = (props) => {
                 }
             })
             setMesin(res.data.data.mesin)
-            console.log(res.data.data.mesin)
         } catch (err) {
             console.log(err.message)
         }

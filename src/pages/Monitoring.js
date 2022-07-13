@@ -13,8 +13,6 @@ function Monitoring() {
 
   const router = useHistory()
 
-  
-
   const [show, setShow] = useState(false);
 
   function handleClose() {

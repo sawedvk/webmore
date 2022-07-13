@@ -47,6 +47,7 @@ export default function Mesin() {
 
   useEffect(() => {
       getMesin()
+      localStorage.removeItem("delEmail")
   }, [])
 
   return (
