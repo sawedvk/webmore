@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ModalComponent from './modalComponent';
 
-function MonitorItem({ data, satuan, ket }) {
+function MonitorItem({index, data, satuan, ket, alarm, enableAlarm, fullData }) {
 
   const [show, setShow] = useState(false);
 
@@ -11,7 +11,7 @@ function MonitorItem({ data, satuan, ket }) {
   }
 
   return (
-    <div className='col-2 mx-auto text-center mt-3 border my-border-radius shadow'>
+    <div className={alarm && enableAlarm ?'col-2 mx-auto text-center mt-3 border border-danger my-border-radius shadow':'col-2 mx-auto text-center mt-3 border my-border-radius shadow'}>
       <button className='btn' onClick={()=>setShow(true)}>
         <img src='/assets/Settings.png' width={30} height={30} className='mt-2' />
       </button>
@@ -27,6 +27,9 @@ function MonitorItem({ data, satuan, ket }) {
       <ModalComponent
         show={show}
         handleClose={handleClose}
+        nama = {ket}
+        fullData={fullData}
+        index={index}
       />
     </div>
   )

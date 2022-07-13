@@ -31,7 +31,17 @@ const FormPabrik = ({create, nama, alamat, kabKota, provinsi, peta, foto}) => {
       setFoto(exPabrik.foto)
     }
   }
-
+  const getimg = async(url) => {
+    try{
+      console.log(url)
+      const res = await axios(url, {
+        crossdomain: true
+      })
+      console.log(res.data)
+    }catch(err){
+      console.log(err.response)
+    }
+  }
   const convertURLtoFile = async(url) =>{
     const response = await fetch(url);
     const data = await response.blob();
@@ -115,7 +125,7 @@ const FormPabrik = ({create, nama, alamat, kabKota, provinsi, peta, foto}) => {
   }
 
   const ubahPabrik = async() => {
-    convertURLtoFile(exPabrik.foto)
+    getimg(exPabrik.foto)
   }
 
   useEffect(()=>{
